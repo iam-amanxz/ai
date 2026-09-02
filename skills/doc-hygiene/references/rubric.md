@@ -67,6 +67,11 @@ Probes:
   doc alone, because the reader can't tell which one lost.
 - Naming: is there a convention, and do outliers exist? A redundant prefix
   (`<servicename>-*.md` inside that service's own repo) is noise.
+- **Stable identifiers.** Do the doc types people cite in conversation and
+  commit messages carry a sequence (`0012-slug.md`)? Decisions almost always do;
+  plans usually don't and should, for the same reason. A doc referred to only by
+  slug gets renamed and every citation rots silently. Deduct 3 if a
+  heavily-cross-referenced type has no stable handle.
 
 ## 3. Lifecycle state (20)
 
@@ -94,6 +99,11 @@ grep -rhoE '^status: *.*' <docsdir> | sort | uniq -c | sort -rn
 A vocabulary with 9 spellings of "done" (`IMPLEMENTED`, `DONE`, `shipped`,
 `Implemented ✅`…) scores 0 on the vocabulary component. Free-text status is
 prose wearing a field's clothing.
+
+Check the date pair for coherence, not just presence — `updated` earlier than
+`created` is common and means one of two things, both worth reporting: the pair
+was filled in backwards at authoring time, or someone changed a status without
+bumping `updated`. ISO dates compare lexically, so it's a string compare.
 
 Do not award the state points for a `**Status:**` line in the body *and* a
 frontmatter field — two homes for one fact is a drift generator. Score the
