@@ -3,11 +3,11 @@
 Agent skills I use daily to drive coding agents.
 
 A skill is a markdown file that teaches an agent one job properly — when to reach for
-it, what to produce, and what it is not allowed to do. These are the ten I keep
-installed. Most exist because an agent's *default* behaviour on that task was wrong in
-a specific, repeatable way, and the skill is the correction.
+it, what to produce, and what it is not allowed to do. Most of these exist because an
+agent's *default* behaviour on that task was wrong in a specific, repeatable way, and
+the skill is the correction.
 
-## The skills
+## Written by me
 
 | Skill | What it does |
 |---|---|
@@ -16,10 +16,18 @@ a specific, repeatable way, and the skill is the correction.
 | [`doc-hygiene`](skills/doc-hygiene/SKILL.md) | Scores a repo's docs out of 100 — discoverability, lifecycle state, link integrity, and whether claims are *true against the actual code* — then remediates. Hard stop for approval between audit and fix. |
 | [`ux-discovery`](skills/ux-discovery/SKILL.md) | Interviews me about a product, then writes a Product & UX Discovery Specification for handoff to a design AI. Documents users, jobs, workflows, screens, states, and rules. |
 | [`open-questions`](skills/open-questions/SKILL.md) | Turns a tangle of unresolved decisions into one question at a time, each with a recommendation, waiting for an explicit choice before the next. |
-| [`grill-me`](skills/grill-me/SKILL.md) | Interrogates a plan until every branch of the decision tree is resolved. Explores the codebase rather than asking what it could look up. |
 | [`playstore-listing`](skills/playstore-listing/SKILL.md) | Turns a repo's existing device captures and icon into a full Play Console listing — every text field, every graphic, and a script that rebuilds both. Generates no new artwork. |
 | [`play-console-answers`](skills/play-console-answers/SKILL.md) | Drafts the Play production-access questionnaire, grounded in the app's real features, each answer under 300 characters. |
 | [`plain`](skills/plain/SKILL.md) | Re-explains whatever just happened in plain English. |
+
+## Also installed — not mine
+
+Third-party skills I use and keep vendored here so my setup is reproducible. I did not
+write these.
+
+| Skill | What it does |
+|---|---|
+| [`grill-me`](skills/grill-me/SKILL.md) | Interrogates a plan until every branch of the decision tree is resolved. |
 | [`caveman`](skills/caveman/SKILL.md) | Compresses output ~75% while keeping every technical detail exact. Six intensity levels. |
 
 ## What they have in common
@@ -35,10 +43,10 @@ as an isolated subagent. One model role-playing five experts in a single pass pr
 consensus; five agents that have never seen each other's output produce the
 disagreement that is the entire point.
 
-**Asking is a first-class output.** `open-questions` and `grill-me` exist because the
-expensive failure is an agent guessing confidently on an underspecified task. A
-recommendation attached to each question makes answering cheap without letting the
-agent proceed alone.
+**Asking is a first-class output.** `open-questions` exists because the expensive
+failure is an agent guessing confidently on an underspecified task. A recommendation
+attached to each question makes answering cheap without letting the agent proceed
+alone.
 
 **They are load-bearing, not demos.** Two apps on Google Play
 ([TuitionHub](https://play.google.com/store/apps/details?id=com.shooque.tuitionhub),
