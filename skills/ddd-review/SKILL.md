@@ -26,7 +26,7 @@ Read these before forming any opinion. Declared intent lives in docs; reality li
 4. **`docs/guides/architecture.md`** and each context's own `CLAUDE.md` — the prose description of what each context is *supposed* to own.
 5. **`docs/plans/`** — in-progress plans may already move things; don't recommend a move that plan 00NN is mid-way through. Check plan `status` frontmatter.
 
-If the service has no `src/contexts/` layout at all (most SOPera services don't yet — they're `modules/`-style Nest apps), say so up front and audit against the *intended* target layout rather than pretending contexts exist.
+If the service has no `src/contexts/` layout at all — a `modules/`-style Nest app, say — call that out up front and audit against the *intended* target layout rather than pretending contexts exist.
 
 ---
 
